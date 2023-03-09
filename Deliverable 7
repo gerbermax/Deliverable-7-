@@ -1,0 +1,24 @@
+# Asking to user enter an integer value greater than 0
+n = int(input("Enter an integer value greater than 0: "))
+
+even_numbers = []
+odd_numbers = []
+fibonacci_numbers = [0,1]
+
+# Check n value is greater than 0
+if n > 0:
+
+    for num in range(2,n+1):
+        fibonacci_numbers.append(fibonacci_numbers[num - 1] + fibonacci_numbers[num - 2])
+        
+    for number in range(n):
+        even_numbers.append(2*number)
+        odd_numbers.append(2*number+1)
+
+    print("-"*37)
+    print("|{:^5}|{:^8}|{:^8}|{:^12}|".format("","Even","Odd","Fibonacci"))
+    print("-"*37)
+    
+    for index in range(n):
+        print("|{:^5}|{:^8}|{:^8}|{:^12}|".format(index,even_numbers[index],odd_numbers[index],fibonacci_numbers[index]))
+        print("-"*37)
